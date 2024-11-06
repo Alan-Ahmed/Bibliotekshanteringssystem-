@@ -7,6 +7,11 @@ public class Bibliotek
     private List<Bok> böcker = new List<Bok>();
     private List<Författare> författare = new List<Författare>();
 
+    public Bibliotek()
+    {
+        // Om du vill att böcker ska läggas till här kan du göra det
+    }
+
     public void LäggTillNyBok()
     {
         Bok nyBok = new Bok();
@@ -26,6 +31,7 @@ public class Bibliotek
             nyBok.Publiceringsår = år;
         }
 
+        // Lägg till bok till listan
         böcker.Add(nyBok);
         Console.WriteLine("Ny bok har lagts till.");
         BibliotekJsonHantering.SparaDataTillJSON(this);
@@ -41,6 +47,7 @@ public class Bibliotek
         Console.Write("Ange land: ");
         nyFörfattare.Land = Console.ReadLine();
 
+        // Lägg till författare till listan
         författare.Add(nyFörfattare);
         Console.WriteLine("Ny författare har lagts till.");
         BibliotekJsonHantering.SparaDataTillJSON(this);
